@@ -213,7 +213,7 @@ To execute the tests, run the following command inside the project folder:
 
 - [x] Creating a data model.
 - [x] Processing data in models.
-- [ ] Validations and Model specs.
+- [x] Validations and Model specs.
 - [ ] Controllers.
 - [ ] Controllers specs.
 - [ ] Views.

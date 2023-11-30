@@ -3,6 +3,9 @@ class User < ApplicationRecord
   has_many :comments, class_name: 'Comment', foreign_key: :user_id
   has_many :likes, class_name: 'Like', foreign_key: :user_id
 
+  validates :name, presence: true
+  validates :posts_counter, numericality: { greater_than_or_equal_to: 0 }
+
   def most_recent_posts(n_limit = 3)
     posts.order(created_at: :desc).limit(n_limit)
   end

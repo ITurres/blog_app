@@ -69,4 +69,34 @@ RSpec.describe Post, type: :model do
       end
     end
   end
+
+  describe 'likes_counter attribute' do
+    context 'should be valid' do
+      it 'if it is an integer' do
+        subject.likes_counter = 10
+
+        expect(subject).to be_valid
+      end
+
+      it 'if it is greater than or equal to 0' do
+        subject.likes_counter = 10
+
+        expect(subject).to be_valid
+      end
+    end
+
+    context 'should NOT be valid' do
+      it 'if it is NOT an integer' do
+        subject.likes_counter = 'string'
+
+        expect(subject).to_not be_valid
+      end
+
+      it 'if it is less than 0' do
+        subject.likes_counter = -1
+
+        expect(subject).to_not be_valid
+      end
+    end
+  end
 end

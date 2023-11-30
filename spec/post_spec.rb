@@ -1,5 +1,6 @@
 require_relative '../app/models/user'
 require_relative '../app/models/post'
+require_relative '../app/models/comment'
 
 RSpec.describe Post, type: :model do
   let(:user) { User.create(name: 'Harry', photo: 'https://unsplash.com/photos/F_-0BxGuVvo', bio: 'Student at Hogwarts') }
@@ -96,6 +97,35 @@ RSpec.describe Post, type: :model do
         subject.likes_counter = -1
 
         expect(subject).to_not be_valid
+      end
+    end
+  end
+
+  describe '#methods' do
+    describe '#update_posts_counter' do
+      it 'should update the posts_counter attribute of the author' do
+        expect { subject.update_posts_counter }.to change { user.posts_counter }.by(1)
+      end
+    end
+
+    describe '#most_recent_comments' do
+      it 'should return the default 5 most recent' do
+        comment1 = Comment.create(post: subject, author: user, text: 'Comment 1')
+        comment2 = Comment.create(post: subject, author: user, text: 'Comment 2')
+        comment3 = Comment.create(post: subject, author: user, text: 'Comment 3')
+        comment4 = Comment.create(post: subject, author: user, text: 'Comment 4')
+        comment5 = Comment.create(post: subject, author: user, text: 'Comment 5')
+
+        # * The most recent comments defaults to the last n_limit = 5 comments created.
+        expect(subject.most_recent_comments).to eq([comment5, comment4, comment3, comment2, comment1])
+      end
+
+      it 'should return an specify number of comments. i.e n_limit = 2; most recent' do
+        comment1 = Comment.create(post: subject, author: user, text: 'Comment 1')
+        comment2 = Comment.create(post: subject, author: user, text: 'Comment 2')
+        n_limit = 2
+
+        expect(subject.most_recent_comments(n_limit)).to eq([comment2, comment1])
       end
     end
   end

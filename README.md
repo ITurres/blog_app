@@ -212,8 +212,8 @@ To execute the tests, run the following command inside the project folder:
 ## 🔭 Future Features <a name="future-features"></a>
 
 - [x] Creating a data model.
+- [x] Processing data in models.
 - [ ] Validations and Model specs.
-- [ ] Processing data in models.
 - [ ] Controllers.
 - [ ] Controllers specs.
 - [ ] Views.

@@ -35,14 +35,14 @@ ActiveRecord::Schema[7.1].define(version: 20_231_128_225_901) do
   end
 
   create_table 'posts', force: :cascade do |t|
-    t.bigint 'author_id_id', null: false
+    t.bigint 'author_id', null: false
     t.string 'title'
     t.text 'text'
     t.integer 'comments_counter', default: 0
     t.integer 'likes_counter', default: 0
     t.datetime 'created_at', null: false
     t.datetime 'updated_at', null: false
-    t.index ['author_id_id'], name: 'index_posts_on_author_id_id'
+    t.index ['author_id'], name: 'index_posts_on_author_id'
   end
 
   create_table 'users', force: :cascade do |t|
@@ -54,10 +54,10 @@ ActiveRecord::Schema[7.1].define(version: 20_231_128_225_901) do
     t.datetime 'updated_at', null: false
   end
 
-  add_foreign_key 'comments', 'posts', column: 'posts_id'
-  add_foreign_key 'comments', 'users', column: 'users_id'
-  add_foreign_key 'likes', 'posts', column: 'posts_id'
-  add_foreign_key 'likes', 'users', column: 'users_id'
-  add_foreign_key 'posts', 'users', column: 'author_id_id'
+  add_foreign_key 'comments', 'posts'
+  add_foreign_key 'comments', 'users'
+  add_foreign_key 'likes', 'posts'
+  add_foreign_key 'likes', 'users'
+  add_foreign_key 'posts', 'users', column: 'author_id'
 end
 # rubocop:enable Metrics/BlockLength

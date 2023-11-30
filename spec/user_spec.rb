@@ -1,4 +1,5 @@
 require_relative '../app/models/user'
+require_relative '../app/models/post'
 
 RSpec.describe User, type: :model do
   subject { described_class.new(name: 'Harry', photo: 'https://unsplash.com/photos/F_-0BxGuVvo', bio: 'Student at Hogwarts') }
@@ -47,6 +48,27 @@ RSpec.describe User, type: :model do
 
           expect(subject).to_not be_valid
         end
+      end
+    end
+  end
+
+  describe '#methods' do
+    describe '#most_recent_posts' do
+      it 'should return the default 3 most recent' do
+        post1 = Post.create(author: subject, title: 'Comment 1', text: 'some text')
+        post2 = Post.create(author: subject, title: 'Comment 2', text: 'some text')
+        post3 = Post.create(author: subject, title: 'Comment 3', text: 'some text')
+
+        # * The most recent posts defaults to the last n_limit = 3 posts created.
+        expect(subject.most_recent_posts).to eq([post3, post2, post1])
+      end
+
+      it 'should return an specify number of posts. i.e n_limit = 2; most recent' do
+        post1 = Post.create(author: subject, title: 'Comment 1', text: 'some text')
+        post2 = Post.create(author: subject, title: 'Comment 2', text: 'some text')
+        n_limit = 2
+
+        expect(subject.most_recent_posts(n_limit)).to eq([post2, post1])
       end
     end
   end

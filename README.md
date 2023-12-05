@@ -215,7 +215,7 @@ To execute the tests, run the following command inside the project folder:
 - [x] Processing data in models.
 - [x] Validations and Model specs.
 - [x] Controllers.
-- [ ] Controllers specs.
+- [x] Controllers specs.
 - [ ] Views.
 - [ ] Forms.
 - [ ] Integration specs for Views and fixing n+1 problems.

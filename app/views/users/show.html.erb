@@ -1,6 +1,6 @@
 <h1 hidden>users/show</h1>
 
-<main class="container mt-4">
+<main class="container mt-4" style="max-width: 900px;">
     <%= render "shared/user_card", user: @user %>
 
     <section>
@@ -13,7 +13,10 @@
     <section>
         <div class="mt-4">
             <% if @user.posts.any? %>
-                <%= render "shared/posts", posts: @user.most_recent_posts %>
+                <%= render "posts/posts",
+                           posts: @user.most_recent_posts,
+                           truncate_n: 100,
+                           limit_n: 3 %>
             <% else %>
                 <p class="text-muted text-center">No posts yet.</p>
             <% end %>

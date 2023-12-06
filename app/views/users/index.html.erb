@@ -1,6 +1,6 @@
 <h1 hidden>users/index</h1>
 
-<main class='container d-flex flex-column justify-content-center align-items-center mt-4'>
+<main class='container mt-4'>
     <% @users.each do |user| %>
         <%= render "shared/user_card", user: user %>
     <% end %>

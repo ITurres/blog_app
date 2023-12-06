@@ -1,1 +1,23 @@
-<h1>users/show</h1>
+<h1 hidden>users/show</h1>
+
+<main class="container mt-4">
+    <%= render "shared/user_card", user: @user %>
+
+    <section>
+        <div class="border border-primary p-3">
+            <h2>Bio</h2>
+            <p><%= @user.bio %></p>
+        </div>
+    </section>
+
+    <section>
+        <div class="mt-4">
+            <% if @user.posts.any? %>
+                <%= render "shared/posts", posts: @user.most_recent_posts %>
+            <% else %>
+                <p class="text-muted text-center">No posts yet.</p>
+            <% end %>
+        </div>
+        <% # ! See all posts button | to be implemented %>
+    </section>
+</main>

@@ -1,5 +1,5 @@
 <% posts.each_with_index do |post, index| %>
-    <div class="card">
+    <div class="card mt-3">
 
       <%= link_to user_post_path(post.author, post), class: "text-decoration-none" do %>
         <div class="card-header">
@@ -18,8 +18,8 @@
       <% end %>
     </div>
 
-    <% if post.most_recent_comments.any? %>
-      <div class="card card-body mt-1 mb-3 p-3">
+    <% if limit_n > 0 %>
+      <div class="card card-body mt-1 p-3">
         <ul class="list-unstyled">
 
           <% post.most_recent_comments(limit_n).each do |comment| %>

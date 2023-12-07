@@ -16,11 +16,14 @@
                 <%= render "posts/posts",
                            posts: @user.most_recent_posts,
                            truncate_n: 100,
-                           limit_n: 3 %>
+                           limit_n: 0 %>
             <% else %>
                 <p class="text-muted text-center">No posts yet.</p>
             <% end %>
         </div>
-        <% # ! See all posts button | to be implemented %>
+
+        <%= render "shared/button_link",
+                   button_text: "See all posts",
+                   path: user_posts_path(@user) %>
     </section>
 </main>

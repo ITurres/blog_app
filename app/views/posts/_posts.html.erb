@@ -1,9 +1,20 @@
 <% posts.each_with_index do |post, index| %>
     <div class="card mt-3">
 
-      <%= link_to user_post_path(post.author, post), class: "text-decoration-none" do %>
-        <div class="card-header">
-          <span><strong>Post #<%= index + 1 %></strong></span>
+      <%= link_to user_post_path(post.author, post), class: "text-decoration-none text-secondary" do %>
+        <div class="card-header d-flex justify-content-between">
+          <span class="text-success">
+            <strong>
+              Post #<%= index + 1 %>
+              <%= posts.size == 1 ? " | By #{post.author.name}" : "" %>
+            </strong>
+          </span>
+          <% if posts.size == 1 %> 
+            <div class="text-muted">
+              <span>Comments: <%= post.comments_counter %></span>,
+              <span>Likes: <%= post.likes_counter %></span>
+            </div>
+          <% end %>
         </div>
 
         <div class="card-body">
@@ -11,10 +22,12 @@
           <p class="card-text"><%= truncate_n.nil? ? post.text : post.text.truncate(truncate_n) %></p>
         </div>
 
-        <div class="text-muted pt-1 pb-2 pr-3" style="text-align: end;">
-          <span>Comments: <%= post.comments_counter %></span>,
-          <span>Likes: <%= post.likes_counter %></span>
-        </div>
+        <% if posts.size > 1 %>
+          <div class="text-muted pt-1 pb-2 pr-3" style="text-align: end;">
+            <span>Comments: <%= post.comments_counter %></span>,
+            <span>Likes: <%= post.likes_counter %></span>
+          </div>
+        <% end %>
       <% end %>
     </div>
 

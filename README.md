@@ -216,7 +216,7 @@ To execute the tests, run the following command inside the project folder:
 - [x] Validations and Model specs.
 - [x] Controllers.
 - [x] Controllers specs.
-- [ ] Views.
+- [x] Views.
 - [ ] Forms.
 - [ ] Integration specs for Views and fixing n+1 problems.
 - [ ] Add Devise.

@@ -1,1 +1,20 @@
-<h1>posts/index</h1>
+<h1 hidden>posts/index</h1>
+
+<main class='container mt-4' style="max-width: 900px;">
+    <%= render "shared/user_card", user: @user %>
+
+    <div class="mt-4">
+        <% if @user.posts.any? %>
+            <%= render "posts",
+                       posts: @user.most_recent_posts,
+                       truncate_n: 50,
+                       limit_n: 5 %>
+        <% else %>
+            <p class="text-muted text-center">No posts yet.</p>
+        <% end %>
+    </div>
+
+    <%= render "shared/button_link",
+               button_text: "Pagination",
+               path: user_path(@user) %>
+<main>

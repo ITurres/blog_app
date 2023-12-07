@@ -14,6 +14,7 @@
 - [📖 About the Project](#about-project)
   - [🛠 Built With](#built-with)
     - [Tech Stack](#tech-stack)
+    - [Key Features](#key-features)
 - [💻 Getting Started](#getting-started)
   - [Prerequisites](#prerequisites)
   - [Setup](#setup)
@@ -81,8 +82,13 @@
       </a>
     </li>
     <li>
-      <a href="https://www.sass-lang.com/">
-        <img src="https://skillicons.dev/icons?i=sass"/> Sass
+      <a href="https://developer.mozilla.org/en-US/docs/Web/CSS">
+        <img src="https://skillicons.dev/icons?i=sass"/> CSS
+      </a>
+    </li>
+    <li>
+      <a href="https://getbootstrap.com/docs/4.0/getting-started/introduction/">
+        <img src="https://skillicons.dev/icons?i=bootstrap"/> Bootstrap
       </a>
     </li>
     <li>
@@ -91,6 +97,16 @@
       </a>
     </li>
   </ul>
+
+---
+
+### :key: Key Features <a name="key-features"></a>
+
+- It allows you to create, edit and delete posts.
+- create, edit and delete comments.
+- You can also like posts.
+- Great authentication by gem devise.
+- And flawless authorization by gem `cancancan`.
 
 ---
 
@@ -216,7 +232,7 @@ To execute the tests, run the following command inside the project folder:
 - [x] Validations and Model specs.
 - [x] Controllers.
 - [x] Controllers specs.
-- [ ] Views.
+- [x] Views.
 - [ ] Forms.
 - [ ] Integration specs for Views and fixing n+1 problems.
 - [ ] Add Devise.

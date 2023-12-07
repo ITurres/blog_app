@@ -1,1 +1,8 @@
-<h1>posts/show</h1>
+<h1 hidden>posts/show</h1>
+
+<main class='container mt-4' style="max-width: 900px;">
+    <%= render "posts",
+               posts: [@post], # ! @post is a single post so we need to wrap it in an array for it to be iterable.
+               truncate_n: nil,
+               limit_n: @post.comments_counter %>
+</main>

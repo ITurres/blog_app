@@ -1,1 +1,29 @@
-<h1>users/show</h1>
+<h1 hidden>users/show</h1>
+
+<main class="container mt-4" style="max-width: 900px;">
+    <%= render "shared/user_card", user: @user %>
+
+    <section>
+        <div class="border border-primary p-3">
+            <h2>Bio</h2>
+            <p><%= @user.bio %></p>
+        </div>
+    </section>
+
+    <section>
+        <div class="mt-4">
+            <% if @user.posts.any? %>
+                <%= render "posts/posts",
+                           posts: @user.most_recent_posts,
+                           truncate_n: 100,
+                           limit_n: 0 %>
+            <% else %>
+                <p class="text-muted text-center">No posts yet.</p>
+            <% end %>
+        </div>
+
+        <%= render "shared/button_link",
+                   button_text: "See all posts",
+                   path: user_posts_path(@user) %>
+    </section>
+</main>

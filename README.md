@@ -14,6 +14,7 @@
 - [📖 About the Project](#about-project)
   - [🛠 Built With](#built-with)
     - [Tech Stack](#tech-stack)
+    - [Key Features](#key-features)
 - [💻 Getting Started](#getting-started)
   - [Prerequisites](#prerequisites)
   - [Setup](#setup)
@@ -96,6 +97,16 @@
       </a>
     </li>
   </ul>
+
+---
+
+### :key: Key Features <a name="key-features"></a>
+
+- It allows you to create, edit and delete posts.
+- create, edit and delete comments.
+- You can also like posts.
+- Great authentication by gem devise.
+- And flawless authorization by gem `cancancan`.
 
 ---
 

@@ -81,8 +81,13 @@
       </a>
     </li>
     <li>
-      <a href="https://www.sass-lang.com/">
-        <img src="https://skillicons.dev/icons?i=sass"/> Sass
+      <a href="https://developer.mozilla.org/en-US/docs/Web/CSS">
+        <img src="https://skillicons.dev/icons?i=sass"/> CSS
+      </a>
+    </li>
+    <li>
+      <a href="https://getbootstrap.com/docs/4.0/getting-started/introduction/">
+        <img src="https://skillicons.dev/icons?i=bootstrap"/> Bootstrap
       </a>
     </li>
     <li>

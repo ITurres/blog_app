@@ -1,0 +1,17 @@
+<div class="inputs-group mt-1">
+    <% if title %>
+    <%= form.text_field :title, class: "form-control mb-2",
+                                placeholder: "Think of a title..." %>
+    <% end %>
+
+    <%= form.text_area :text, class: "form-control mb-2", rows: n_rows,
+                              placeholder: "Whats on your mind?" %>
+
+    <div class="input-group align-items-center p-1">
+        <%= form.submit submit_btn_txt, class: "form-control btn btn-success" %>
+
+        <%= render "shared/button_link", button_text: "Cancel",
+                                         button_type: "danger",
+                                         path: user_posts_path(@user) %>
+    </div>
+</div>

@@ -185,6 +185,12 @@ Then run the following command to migrate the database:
  rails db:migrate
 ```
 
+If you want to populate the database with sample data, run the following command:
+
+```bash
+ rails db:seed
+```
+
 ### Usage <a name="usage"></a>
 
 Run the following command inside the project folder to start the application:
@@ -233,7 +239,7 @@ To execute the tests, run the following command inside the project folder:
 - [x] Controllers.
 - [x] Controllers specs.
 - [x] Views.
-- [ ] Forms.
+- [x] Forms.
 - [ ] Integration specs for Views and fixing n+1 problems.
 - [ ] Add Devise.
 - [ ] Add authorization rules.

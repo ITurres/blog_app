@@ -13,6 +13,8 @@ class PostsController < ApplicationController
     p '------PostsController / show------'
 
     @post = Post.find(params[:id])
+    @user = current_user
+    @like = @post.likes.find_by(author: current_user)
   end
 
   def new

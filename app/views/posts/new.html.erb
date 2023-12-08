@@ -1,0 +1,17 @@
+<h1 hidden>posts/new</h1>
+
+<main class="container mt-4" style="max-width: 900px;">
+    <h2 class="text-center mb-3 text-muted">Create a new post!</h2>
+
+    <div style="max-width: 530px; margin: 0 auto;" class="mb-3">
+    <%= form_with model: [@user, @post],
+                  url: user_posts_path(@user),
+                  class: "form-control h-auto" do |form| %>
+
+        <% render "shared/inputs_group", form: form,
+                                         submit_btn_txt: "Create",
+                                         n_rows: 5,
+                                         title: true %>
+    <% end %>
+</div>
+</main>

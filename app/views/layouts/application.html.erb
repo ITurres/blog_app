@@ -10,7 +10,7 @@
       integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
       crossorigin="anonymous"
     />
-    <%= favicon_link_tag asset_path('blog-logo.png') %>
+    <%= favicon_link_tag asset_path("blog-logo.png") %>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -19,10 +19,18 @@
   </head>
 
   <body>
-    <%# Navbar %>
+    <div class="container mt-1 text-center">
+      <% flash.each do |key, message| %>
+          <div class="alert alert-<%= key %> m-2">
+              <%= message %>
+          </div>
+      <% end %>
+    </div>
+
+    <% # Navbar %>
 
     <%= yield %>
 
-    <%# Footer %>
+    <% # Footer %>
   </body>
 </html>

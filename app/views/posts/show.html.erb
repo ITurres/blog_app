@@ -5,4 +5,17 @@
                posts: [@post], # ! @post is a single post so we need to wrap it in an array for it to be iterable.
                truncate_n: nil,
                limit_n: @post.comments_counter %>
+    
+    <%= form_with model: Comment.new, url: user_post_comments_path(@user, @post) do |form| %>
+      <%= form.hidden_field :post_id, value: @post.id %>
+        <%= render "shared/inputs_group", form: form,
+                                          submit_btn_txt: "Comment",
+                                          n_rows: 2,
+                                          title: false %>
+    <% end %>
+
+    <%= form_with model: Like.new, url: user_post_likes_path(@user, @post) do |form| %>
+        <%= form.hidden_field :post_id, value: @post.id %>
+        <%= form.submit "Like", class: "btn btn-primary" %>
+    <% end %>
 </main>

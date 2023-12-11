@@ -1,8 +1,8 @@
 require 'rails_helper'
 
 RSpec.describe Like, type: :model do
-  let(:user) { create(:user) } # ? This is a factory created with FactoryBot
-  let(:related_post) { create(:post, author: user) } # ? This is a factory created with FactoryBot
+  let(:user) { create(:user) } # ? This is a factory created with FactoryBot.
+  let(:related_post) { create(:post, author: user) } # ? This is a factory created with FactoryBot.
 
   describe '#methods' do
     describe '#update_likes_counter' do

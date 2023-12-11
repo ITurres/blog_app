@@ -203,10 +203,10 @@ This will start the application on your local server. You can now open your brow
 
 ### Run tests <a name="run-tests"></a>
 
-To execute the tests, run the following command inside the project folder:
+To execute the tests, run the following command inside the project folder (root):
 
 ```bash
- rspec
+ bundle exec rspec
 ```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>

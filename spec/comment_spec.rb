@@ -1,8 +1,8 @@
 require 'rails_helper'
 
 RSpec.describe Comment, type: :model do
-  let(:user) { User.create(name: 'Harry', photo: 'https://unsplash.com/photos/F_-0BxGuVvo', bio: 'Student at Hogwarts') }
-  let(:related_post) { Post.create(author: user, title: 'A title', text: 'some text here') }
+  let(:user) { create(:user) } # ? This is a factory created with FactoryBot.
+  let(:related_post) { create(:post, author: user) } # ? This is a factory created with FactoryBot.
 
   describe '#methods' do
     describe '#update_comments_counter' do

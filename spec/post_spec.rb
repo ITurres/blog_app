@@ -1,8 +1,8 @@
 require 'rails_helper'
 
 RSpec.describe Post, type: :model do
-  let(:user) { User.create(name: 'Harry', photo: 'https://unsplash.com/photos/F_-0BxGuVvo', bio: 'Student at Hogwarts') }
-  subject { described_class.new(author: user, title: 'A valid title within maximum length', text: 'some text here') }
+  let(:user) { create(:user) } # ? This is a factory created with FactoryBot.
+  subject { create(:post, author: user) } # ? This is a factory created with FactoryBot.
 
   before { subject.save }
 

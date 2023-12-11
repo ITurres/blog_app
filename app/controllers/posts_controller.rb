@@ -2,7 +2,7 @@ class PostsController < ApplicationController
   def index
     p '------PostsController------'
     if params[:user_id]
-      @user = User.find(params[:user_id])
+      @user = User.includes(:likes, :comments).find(params[:user_id])
       @posts = @user.posts
     else
       @posts = Post.all

@@ -33,13 +33,15 @@ RSpec.describe Post, type: :system do
       end
     end
 
-    it 'displays comments on a post' do
+    it 'displays comments on each post' do
       post = create(:post, author: user)
-      comment = create(:comment, post:)
+      create(:comment, post:)
 
       visit user_posts_path(user)
 
-      expect(page).to have_content(comment.text)
+      user.comments.each do |comment|
+        expect(page).to have_content(comment.text)
+      end
     end
 
     it 'displays the comment counter for each post' do

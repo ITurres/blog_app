@@ -18,8 +18,9 @@ RSpec.describe Post, type: :system do
     end
     # I can see the number of posts each user has written.
     it 'displays the number of posts each user has written' do
-      expect(page).to have_content('Number of posts: 3', count: 1)
-      expect(page).to have_content('Number of posts: 5', count: 1)
+      expect(page).to have_content('3 posts.', count: 1)
+      expect(page).to have_content('5 posts.', count: 1)
+      sleep(5)
     end
     # When I click on a user, I am redirected to that user's show page.
     it 'when user is clicked it redirects to that users show page' do

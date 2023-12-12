@@ -10,9 +10,11 @@
 
 # ? Create 10 random users.
 10.times do
+  photo_number = rand(1..5) # ? the below url can only handle 5 different photos.
+  photo_url = "https://robohash.org/accusantiumeaquea.png?size=200x200&set=set#{photo_number}"
   user = User.create(
-    name: Faker::Name.unique.name,
-    photo: Faker::Internet.url,
+    name: Faker::Name.name,
+    photo: photo_url,
     bio: Faker::Lorem.sentence
   )
 

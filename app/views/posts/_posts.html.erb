@@ -1,7 +1,8 @@
 <% posts.each_with_index do |post, index| %>
     <div class="card mt-3">
 
-      <%= link_to user_post_path(post.author, post), class: "text-decoration-none text-secondary" do %>
+      <%= link_to user_post_path(post.author, post),
+                  class: "text-decoration-none text-secondary", id: "post-link-#{index + 1}" do %>
         <div class="card-header d-flex justify-content-between">
           <span class="text-success">
             <strong>

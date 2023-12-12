@@ -225,6 +225,11 @@ To execute the tests, run the following command inside the project folder (root)
 - Youtube: [Arturo Emanuel Guerra Iturres - Youtube Channel](https://www.youtube.com/channel/UC6GFUFHOtBS9mOuI8EJ6q4g)
 - Portfolio: [Arthur Iturres - Portfolio](https://iturres.github.io/iturres-reactive-portfolio/)
 
+👤 **Demes Ameneshoa**
+
+- GitHub: [@demesameneshoa](https://github.com/demesameneshoa)
+- LinkedIn: [@demesameneshoa](https://www.linkedin.com/in/demesameneshoa/)
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ---
@@ -240,7 +245,7 @@ To execute the tests, run the following command inside the project folder (root)
 - [x] Controllers specs.
 - [x] Views.
 - [x] Forms.
-- [ ] Integration specs for Views and fixing n+1 problems.
+- [x] Integration specs for Views and fixing n+1 problems.
 - [ ] Add Devise.
 - [ ] Add authorization rules.
 - [ ] Add API endpoints.

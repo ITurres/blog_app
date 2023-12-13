@@ -246,7 +246,7 @@ To execute the tests, run the following command inside the project folder (root)
 - [x] Views.
 - [x] Forms.
 - [x] Integration specs for Views and fixing n+1 problems.
-- [ ] Add Devise.
+- [x] Add Devise.
 - [ ] Add authorization rules.
 - [ ] Add API endpoints.
 - [ ] API documentation.

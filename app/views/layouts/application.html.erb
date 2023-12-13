@@ -31,5 +31,8 @@
 
     <%= yield %>
 
+    <% unless current_page?(root_path) %>
+      <%= render "shared/back_button" %>
+    <% end %>
   </body>
 </html>

@@ -27,4 +27,6 @@
                    button_type: "success",
                    path: user_posts_path(@user) %>
     </section>
+
+    <%= button_to("Sign Out", destroy_user_session_path, method: :delete) %>
 </main>

@@ -2,4 +2,13 @@
   <%= link_to root_path, class: "navbar-brand" do %>
     <img src="<%= asset_path("blog-logo.png") %>" width="50" height="50" alt="blog app logo">
   <% end %>
+
+  <% if user_signed_in? %>
+    <div class="p-1 text-center">
+      <%= button_to("Sign Out", destroy_user_session_path,
+                    method: :delete,
+                    class: "btn btn-outline-success px-2 py-1",
+                    style: "font-size: 0.9rem;") %>
+    </div>
+  <% end %>
 </nav>

@@ -55,7 +55,7 @@
 - Secure app from n+1 problems.
 - Build a web app that requires the user to log in.
 - Use devise gem for authentication.
-- Limit access to web app resources based on authorization rules.
+- Limit access to web app resources based on authorization rules with cancancan gem.
 - Build an API that is RESTful.
 - Understand importance of APIs and docs following standards.
 - Generate documentation for an API.
@@ -97,6 +97,11 @@
       </a>
     </li>
   </ul>
+
+#### Highlighted Gems
+
+- [Devise](https://github.com/heartcombo/devise/wiki)
+- [Cancancan](https://github.com/CanCanCommunity/cancancan)
 
 ---
 
@@ -247,7 +252,7 @@ To execute the tests, run the following command inside the project folder (root)
 - [x] Forms.
 - [x] Integration specs for Views and fixing n+1 problems.
 - [x] Add Devise.
-- [ ] Add authorization rules.
+- [x] Add authorization rules.
 - [ ] Add API endpoints.
 - [ ] API documentation.
 

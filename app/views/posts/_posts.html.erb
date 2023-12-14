@@ -1,46 +1,54 @@
 <% posts.each_with_index do |post, index| %>
-    <div class="card mt-3">
+  <div class="card mt-3">
 
-      <%= link_to user_post_path(post.author, post),
-                  class: "text-decoration-none text-secondary", id: "post-link-#{index + 1}" do %>
-        <div class="card-header d-flex justify-content-between">
-          <span class="text-success">
-            <strong>
-              Post #<%= index + 1 %>
-              <%= posts.size == 1 ? " | By #{post.author.name}" : "" %>
-            </strong>
-          </span>
-          <% if posts.size == 1 %> 
-            <div class="text-muted">
-              <span>Comments: <%= post.comments_counter %></span>,
-              <span>Likes: <%= post.likes_counter %></span>
-            </div>
-          <% end %>
-        </div>
-
-        <div class="card-body">
-          <h5 class="card-title"><%= post.title %></h5>
-          <p class="card-text"><%= truncate_n.nil? ? post.text : post.text.truncate(truncate_n) %></p>
-        </div>
-
-        <% if posts.size > 1 %>
-          <div class="text-muted pt-1 pb-2 pr-3" style="text-align: end;">
+    <%= link_to user_post_path(post.author, post),
+                class: "text-decoration-none text-secondary", id: "post-link-#{index + 1}" do %>
+      <div class="card-header d-flex justify-content-between">
+        <span class="text-success">
+          <strong>
+            Post #<%= index + 1 %>
+            <%= posts.size == 1 ? " | By #{post.author.name}" : "" %>
+          </strong>
+        </span>
+        <% if posts.size == 1 %> 
+          <div class="text-muted">
             <span>Comments: <%= post.comments_counter %></span>,
             <span>Likes: <%= post.likes_counter %></span>
           </div>
         <% end %>
-      <% end %>
-    </div>
-
-    <% if limit_n > 0 %>
-      <div class="card card-body mt-1 p-3">
-        <ul class="list-unstyled">
-
-          <% post.most_recent_comments(limit_n).each do |comment| %>
-            <li><%= comment.author.name %>: <%= comment.text %></li>
-          <% end %>
-
-        </ul>
       </div>
+
+      <div class="card-body">
+        <h5 class="card-title"><%= post.title %></h5>
+        <p class="card-text"><%= truncate_n.nil? ? post.text : post.text.truncate(truncate_n) %></p>
+      </div>
+
+      <% if posts.size > 1 %>
+        <div class="text-muted pt-1 pb-2 pr-3" style="text-align: end;">
+          <span>Comments: <%= post.comments_counter %></span>,
+          <span>Likes: <%= post.likes_counter %></span>
+        </div>
+      <% end %>
     <% end %>
+  </div>
+
+  <% if limit_n > 0 %>
+    <div class="card card-body mt-1 p-3">
+      <ul class="list-unstyled">
+        <% user = User.find(post.author_id) %>
+        <% post.most_recent_comments(limit_n).each do |comment| %>
+          <li class="d-flex justify-content-between">
+            <%= comment.author.name %>: <%= comment.text %>
+            <% if can?(:destroy, @comment) || (comment.user_id == current_user.id) %>
+              <%= button_to "Delete", user_post_comment_path(user, post, comment),
+                            method: :delete,
+                            class: "btn btn-sm btn-outline-danger px-2 py-0",
+                            style: "font-size: 0.7rem; font-weight: bold;" %>
+            <% end %>
+          </li>
+        <% end %>
+
+      </ul>
+    </div>
+  <% end %>
 <% end %>

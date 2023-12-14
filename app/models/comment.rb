@@ -5,7 +5,11 @@ class Comment < ApplicationRecord
   # * Rails ActiveRecord callbacks to update counters in User model after saving a Comment
   after_save :update_comments_counter
 
-  def update_comments_counter
-    post.increment!(:comments_counter)
+  def update_comments_counter(status = 'increment')
+    if status == 'increment'
+      post.increment!(:comments_counter)
+    elsif status == 'decrement'
+      post.decrement!(:comments_counter)
+    end
   end
 end

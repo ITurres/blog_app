@@ -10,8 +10,12 @@ class Post < ApplicationRecord
   # * Rails ActiveRecord callbacks to update counters in User model after saving a Post.
   after_save :update_posts_counter
 
-  def update_posts_counter
-    author.increment!(:posts_counter)
+  def update_posts_counter(status = 'increment')
+    if status == 'increment'
+      author.increment!(:posts_counter)
+    elsif status == 'decrement'
+      author.decrement!(:posts_counter)
+    end
   end
 
   def most_recent_comments(n_limit = 5)

@@ -14,8 +14,18 @@
                                           title: false %>
     <% end %>
 
-    <%= form_with model: Like.new, url: user_post_likes_path(@user, @post) do |form| %>
-        <%= form.hidden_field :post_id, value: @post.id %>
-        <%= form.submit "Like", class: "btn btn-primary" %>
-    <% end %>
+    <div class="d-flex px-3">
+      <%= form_with model: Like.new,
+                    url: user_post_likes_path(@user, @post), class: "w-100 mr-1" do |form| %>
+          <%= form.hidden_field :post_id, value: @post.id %>
+          <div class="w-100">
+            <%= form.submit "Like", class: "btn btn-primary w-100" %>
+          </div>
+      <% end %>
+
+      <% if can? :destroy, @post || @post.author.id == current_user.id %>
+        <%= button_to "Delete", user_post_path(@user, @post),
+                      method: :delete, class: "btn btn-outline-danger" %>
+      <% end %>
+    </div>
 </main>

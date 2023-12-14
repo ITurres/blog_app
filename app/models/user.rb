@@ -6,15 +6,19 @@ class User < ApplicationRecord
 
   before_create :set_default_photo
 
-  has_many :posts, class_name: 'Post', foreign_key: :author_id
-  has_many :comments, class_name: 'Comment', foreign_key: :user_id
-  has_many :likes, class_name: 'Like', foreign_key: :user_id
+  has_many :posts, class_name: 'Post', foreign_key: :author_id, dependent: :destroy
+  has_many :comments, class_name: 'Comment', foreign_key: :user_id, dependent: :destroy
+  has_many :likes, class_name: 'Like', foreign_key: :user_id, dependent: :destroy
 
   validates :name, presence: true
   validates :posts_counter, numericality: { greater_than_or_equal_to: 0 }
 
   def most_recent_posts(n_limit = 3)
     posts.includes(:likes, :comments).order(created_at: :desc).limit(n_limit)
+  end
+
+  def admin?
+    role == 'admin'
   end
 
   private

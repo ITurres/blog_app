@@ -1,4 +1,6 @@
 class PostsController < ApplicationController
+  load_and_authorize_resource
+
   def index
     p '------PostsController------'
     if params[:user_id]
@@ -36,6 +38,22 @@ class PostsController < ApplicationController
     else
       flash[:error] = 'Post could not be created, please try again...'
       render :new, locals: { user: @user, post: @post }
+    end
+  end
+
+  def destroy
+    p '------PostsController / destroy------'
+
+    @post = Post.find(params[:id])
+    @user = current_user
+
+    if @post.destroy
+      flash[:success] = 'Post successfully deleted!'
+      @post.update_posts_counter('decrement')
+      redirect_to root_path # ! we could also redirect to the user's posts_path.
+    else
+      flash[:error] = 'Post could not be deleted, please try again...'
+      render :show, locals: { user: @user, post: @post }
     end
   end
 

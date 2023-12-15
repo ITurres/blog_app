@@ -36,6 +36,8 @@
 
 - The Blog app will is classic example of a blog website. A fully functional website that will show the list of posts and empower readers to interact with them by adding comments and liking posts.
 
+- It will also can be used from other applications through the API endpoints.
+
 #### Learning objectives
 
 - Use Ruby Gems as a software packages system.
@@ -253,7 +255,7 @@ To execute the tests, run the following command inside the project folder (root)
 - [x] Integration specs for Views and fixing n+1 problems.
 - [x] Add Devise.
 - [x] Add authorization rules.
-- [ ] Add API endpoints.
+- [x] Add API endpoints.
 - [ ] API documentation.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>

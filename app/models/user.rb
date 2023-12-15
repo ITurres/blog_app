@@ -21,6 +21,12 @@ class User < ApplicationRecord
     role == 'admin'
   end
 
+  def as_json(_options = {})
+    { name:,
+      bio:,
+      id: }
+  end
+
   private
 
   def set_default_photo

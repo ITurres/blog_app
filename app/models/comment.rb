@@ -12,4 +12,10 @@ class Comment < ApplicationRecord
       post.decrement!(:comments_counter)
     end
   end
+
+  def as_json(_options = {})
+    { user_id:,
+      text:,
+      id: }
+  end
 end

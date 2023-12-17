@@ -34,9 +34,9 @@
 
 # 📖 Blog App <a name="about-project"></a>
 
-- The Blog app will is classic example of a blog website. A fully functional website that will show the list of posts and empower readers to interact with them by adding comments and liking posts.
+- The Blog app is an example of a blog website. A fully functional website that will show the list of posts and empower readers to interact with them by adding comments and liking posts.
 
-- It will also can be used from other applications through the API endpoints.
+- It can also be used from other applications through the API endpoints.
 
 #### Learning objectives
 
@@ -51,17 +51,17 @@
 - Understand Rails naming conventions.
 - Use params from browser requests in a safe way.
 - Write tests for controllers.
-- Use preprocessed HTML file with embedded Ruby code.
+- Use preprocessed HTML files with embedded Ruby code.
 - Use layouts and templates for shared content.
 - Write integration tests with Capybara gem.
 - Secure app from n+1 problems.
 - Build a web app that requires the user to log in.
 - Use devise gem for authentication.
-- Limit access to web app resources based on authorization rules with cancancan gem.
-- Build an API that is RESTful.
-- Understand importance of APIs and docs following standards.
+- Limit access to web app resources based on authorization rules with Cancan Gem.
+- Build a RESTful API.
+- Understand the importance of APIs and docs following standards.
 - Generate documentation for an API.
-- Understand importance of APIs and docs following standards.
+- Understand the importance of APIs and docs following standards.
 
 ## 🛠 Built With <a name="built-with"></a>
 
@@ -85,7 +85,7 @@
     </li>
     <li>
       <a href="https://developer.mozilla.org/en-US/docs/Web/CSS">
-        <img src="https://skillicons.dev/icons?i=sass"/> CSS
+        <img src="https://skillicons.dev/icons?i=css"/> CSS
       </a>
     </li>
     <li>
@@ -112,8 +112,9 @@
 - It allows you to create, edit and delete posts.
 - create, edit and delete comments.
 - You can also like posts.
-- Great authentication by gem devise.
+- Great authentication by gem `devise`.
 - And flawless authorization by gem `cancancan`.
+- API Endpoints.
 
 ---
 
@@ -125,7 +126,7 @@ To get a local copy up and running, follow these steps.
 
 ### Prerequisites
 
-In order to run this project you need:
+To run this project you need:
 
 - Have Ruby installed. If you need to install Ruby, follow the instructions on the [official page](https://www.ruby-lang.org/en/documentation/installation/).
 
@@ -164,13 +165,13 @@ Go to the project directory:
  cd blog_app
 ```
 
-Before to run the program, verify that you have Ruby on Rails installed on your OS running the following command:
+Before running the program, verify that you have Ruby on Rails installed on your OS by running the following command:
 
 ```bash
  rails --version
 ```
 
-It should show you the version of ruby on rails ​​installed. If this does not happen and only an error message is displayed, then you should either verify your installation or install Ruby on Rails from scratch.
+It should show you the version of Ruby On Rails ​​installed. If this does not happen and only an error message is displayed, you should verify your installation or install Ruby on Rails from scratch.
 
 [Download and Install Ruby on Rails](https://guides.rubyonrails.org/getting_started.html)
 
@@ -253,8 +254,8 @@ To execute the tests, run the following command inside the project folder (root)
 - [x] Views.
 - [x] Forms.
 - [x] Integration specs for Views and fixing n+1 problems.
-- [x] Add Devise.
-- [x] Add authorization rules.
+- [x] Add `Devise`.
+- [x] Add authorization rules (`CanCanCan`).
 - [x] Add API endpoints.
 - [ ] API documentation.
 
@@ -288,7 +289,7 @@ Give a ⭐ if you liked this project!
 
 ## 🙏 Acknowledgments <a name="acknowledgements"></a>
 
-I thank the **Code Reviewers** for their advice and time 🏆
+I thank the **Code Reviewers** for their advice and time, and to @demesameneshoa, who has been a great and professional teammate 🏆
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 

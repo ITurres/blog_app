@@ -1,6 +1,6 @@
 databases:
   - name: postgresql_blog_app_staging-dev_instance
-    databaseName: blog_app_staging-dev
+    databaseName: blog_app_staging_dev
     user: blog_app
     plan: free
 

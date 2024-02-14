@@ -1,7 +1,7 @@
 databases:
-  - name: postgresql_blog_app_staging-dev_instance
-    databaseName: blog_app_staging_dev
-    user: blog_app
+  - name: rails_apps_db_instance
+    databaseName: rails_apps_db_instance
+    user: rails_apps
     plan: free
 
 services:
@@ -14,7 +14,7 @@ services:
     envVars:
       - key: DATABASE_URL
         fromDatabase:
-          name: postgresql_blog_app_staging-dev_instance
+          name: rails_apps_db_instance
           property: connectionString
       - key: RAILS_MASTER_KEY
         sync: false

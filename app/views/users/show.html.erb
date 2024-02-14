@@ -12,6 +12,14 @@
 
     <section>
         <div class="mt-4">
+            <div class="text-center">
+                <% if @user == current_user %>
+                    <%= link_to "Something on your mind? Share it!",
+                                new_user_post_path(@user),
+                                class: "btn btn-outline-success align-self-center mb-3" %>
+                <% end %>
+            </div>
+
             <% if @user.posts.any? %>
                 <%= render "posts/posts",
                            posts: @user.most_recent_posts,

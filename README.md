@@ -14,6 +14,7 @@
 - [📖 About the Project](#about-project)
   - [🛠 Built With](#built-with)
     - [Tech Stack](#tech-stack)
+    - [🚀 Live Demo](#live-demo)
     - [Key Features](#key-features)
 - [💻 Getting Started](#getting-started)
   - [Prerequisites](#prerequisites)
@@ -104,6 +105,16 @@
 
 - [Devise](https://github.com/heartcombo/devise/wiki)
 - [Cancancan](https://github.com/CanCanCommunity/cancancan)
+
+---
+
+<!-- * LIVE DEMO -->
+
+## 🚀 Live Demo <a name="live-demo"></a>
+
+- [Blog App - Live Demo Link](https://blog-app-m4k8.onrender.com/)
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ---
 
